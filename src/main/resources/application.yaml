@@ -1,0 +1,44 @@
+spring:
+  application:
+    name: ecom-application
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/ecomdb
+    username: admin
+    password: admin
+
+  jpa:
+    database: POSTGRESQL
+    show-sql: true
+    hibernate:
+          ddl-auto: update
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+server:
+  port: 8082
+  shutdown: graceful
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+  endpoint:
+    health:
+      show-details: always
+
+    shutdown:
+      enabled: true
+
+  info:
+    env:
+      enabled: true
+
+info:
+  app:
+    name: MyNewApp
+    description: App
+    version : 1.0.0
+
+
